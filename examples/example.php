@@ -27,7 +27,6 @@ function sampleForm() {
     $form->group($form->label('File'), new \JasonKaz\FormBuild\File(), "Help Text");
     $form->group($form->label('File'), new \JasonKaz\FormBuild\Submit('Submit',array('class'=>'btn btn-info')), "Help Text");
 
-
     echo $form->render();
 }
 

@@ -8,16 +8,26 @@
 
 namespace JasonKaz\FormBuild;
 
+/**
+ * Class InputButton
+ * @package JasonKaz\FormBuild
+ */
+class InputButton extends FormElement
+{
 
-class InputButton extends FormElement {
-
-    function __construct($Label='Button', $Attribs=array()) {
+    /**
+     * @param string $Label
+     * @param array $Attribs
+     * @return \JasonKaz\FormBuild\InputButton
+     */
+    function __construct($Label = 'Button', $Attribs = array())
+    {
 
         $this->Attribs = $Attribs;
         $this->setAttributeDefaults(array('class' => 'btn'));
 
-        $this->Code='<input value="'.$Label.'"';
-        $this->Code.=$this->parseAttribs($this->Attribs);
-        $this->Code.=' /> ';
+        $this->Code = '<button';
+        $this->Code .= $this->parseAttribs($this->Attribs);
+        $this->Code .= ' > ' . $Label . '</button>';
     }
 }

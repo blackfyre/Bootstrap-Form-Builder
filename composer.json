@@ -11,6 +11,12 @@
 			"email"		: "jkaczmarsky@gmail.com",
 			"role"		: "Developer",
 			"homepage"	: "http://pendarenstudios.com"
+		},
+        {
+			"name"		: "Galicz Miklós",
+			"email"		: "galicz.miklos@gmail.com",
+			"role"		: "Developer",
+			"homepage"	: "http://blackworks.com"
 		}
 	],
 	"require"		: {

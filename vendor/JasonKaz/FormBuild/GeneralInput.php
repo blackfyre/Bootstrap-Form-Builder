@@ -2,8 +2,12 @@
 namespace JasonKaz\FormBuild;
 
 /**
+ * Class GeneralInput
+ *
  * Creates a general input using the following HTML:
- *    <input type="[input type]" />
+ * <input type="[input type]" />
+ *
+ * @package JasonKaz\FormBuild
  */
 class GeneralInput extends FormElement
 {

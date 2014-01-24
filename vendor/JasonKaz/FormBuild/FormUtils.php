@@ -21,6 +21,18 @@ class FormUtils
         return $ClassString;
     }
 
+    /**
+     * Get the calling class to assist the validation
+     * @return mixed
+     */
+    private function getCaller() {
+        $caller = get_called_class();
+
+        $caller = explode('\\',$caller);
+
+        return strtolower(end($caller));
+    }
+
     protected function parseAttribs($Attribs = array())
     {
         $Str = "";
@@ -33,7 +45,13 @@ class FormUtils
                     $Str .= ' ' . strtolower($key);
                 }
             } else {
-                $Str .= ' ' . $key . '="' . $val . '"';
+
+                if ($key == 'name') {
+                    $Str .= ' ' . $key . '="' . $this->getCaller() . '-' . $val . '"';
+                } else {
+                    $Str .= ' ' . $key . '="' . $val . '"';
+                }
+
             }
         }
 

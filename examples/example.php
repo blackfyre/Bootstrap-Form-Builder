@@ -14,8 +14,9 @@ function sampleForm() {
         array('name' => 'hidden2')
     ));
 
-    $form->group($form->label('User'), new \JasonKaz\FormBuild\Text(array('id' => 'test', 'class' => 'sd', 'name'=>'fuckWit')));
+    $form->group($form->label('User'), new \JasonKaz\FormBuild\Text(array('id' => 'test', 'class' => 'sd', 'name'=>'userField')));
     $form->group($form->label('Pass'), new \JasonKaz\FormBuild\Password(array('id' => 'hello','name'=>'pass1')));
+    $form->group($form->label('Email'),new \JasonKaz\FormBuild\Email(array('name'=>'emailField')));
     $form->group(
         $form->checkbox("Checkbox text", true,array('name'=>'check[]')),
         $form->checkbox("More Text", true)

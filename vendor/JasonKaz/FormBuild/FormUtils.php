@@ -7,11 +7,21 @@ namespace JasonKaz\FormBuild;
  */
 class FormUtils
 {
+    /**
+     * @param $ClassString
+     * @param $ClassToCheck
+     * @return bool
+     */
     protected function classExists($ClassString, $ClassToCheck)
     {
         return in_array($ClassToCheck, explode(" ", $ClassString));
     }
 
+    /**
+     * @param $ClassString
+     * @param $ClassToAdd
+     * @return string
+     */
     protected function addClass($ClassString, $ClassToAdd)
     {
         if (!self::classExists($ClassString, $ClassToAdd)) {
@@ -33,6 +43,10 @@ class FormUtils
         return strtolower(end($caller));
     }
 
+    /**
+     * @param array $Attribs
+     * @return string
+     */
     protected function parseAttribs($Attribs = array())
     {
         $Str = "";

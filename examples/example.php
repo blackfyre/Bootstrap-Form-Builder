@@ -25,6 +25,8 @@ function sampleForm() {
     $form->group($form->label('Select'), new \JasonKaz\FormBuild\Select(array('one' => 1, 'two' => 2, 'three' => 3), 'two', array('multiple' => true)));
     $form->group($form->label('Static Text'), new \JasonKaz\FormBuild\StaticText('weee'));
     $form->group($form->label('File'), new \JasonKaz\FormBuild\File(), "Help Text");
+    $form->group($form->label('File'), new \JasonKaz\FormBuild\Submit('Submit',array('class'=>'btn btn-info')), "Help Text");
+
 
     echo $form->render();
 }

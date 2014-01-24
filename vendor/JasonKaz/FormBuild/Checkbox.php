@@ -3,9 +3,19 @@
 
 namespace JasonKaz\FormBuild;
 
-
+/**
+ * Class Checkbox
+ * @package JasonKaz\FormBuild
+ */
 class Checkbox extends FormElement
 {
+    /**
+     * @param $Text
+     * @param $Inline
+     * @param array $Attribs
+     * @param $FormType
+     * @param $LabelWidth
+     */
     public function __construct($Text, $Inline, $Attribs = array(), $FormType, $LabelWidth)
     {
         $this->Attribs=$Attribs;

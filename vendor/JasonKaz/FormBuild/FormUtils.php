@@ -1,6 +1,10 @@
 <?php
 namespace JasonKaz\FormBuild;
 
+/**
+ * Class FormUtils
+ * @package JasonKaz\FormBuild
+ */
 class FormUtils
 {
     protected function classExists($ClassString, $ClassToCheck)
@@ -17,11 +21,11 @@ class FormUtils
         return $ClassString;
     }
 
-    protected function parseAttribs($Attribs = [])
+    protected function parseAttribs($Attribs = array())
     {
         $Str = "";
 
-        $Properties = ['disabled', 'readonly', 'multiple', 'checked', 'required', 'autofocus'];
+        $Properties = array('disabled', 'readonly', 'multiple', 'checked', 'required', 'autofocus');
 
         foreach ($Attribs as $key => $val) {
             if (in_array($key, $Properties)) {

@@ -1,6 +1,10 @@
 <?php
 namespace JasonKaz\FormBuild;
 
+/**
+ * Class FormType
+ * @package JasonKaz\FormBuild
+ */
 final class FormType
 {
     const Normal     = 0;
@@ -12,6 +16,10 @@ final class FormType
     }
 }
 
+/**
+ * Class Form
+ * @package JasonKaz\FormBuild
+ */
 class Form extends FormElement
 {
     private $FormType, $LabelWidth = 2, $InputWidth = 10;
@@ -104,7 +112,7 @@ class Form extends FormElement
      *
      * @return Label
      */
-    public function label($Text, $Attribs = [], $ScreenReaderOnly = false)
+    public function label($Text, $Attribs = array(), $ScreenReaderOnly = false)
     {
         return new Label($Text, $Attribs, $ScreenReaderOnly, $this->FormType, $this->LabelWidth);
     }
@@ -116,7 +124,7 @@ class Form extends FormElement
      *
      * @return Checkbox
      */
-    public function checkbox($Text, $Inline, $Attribs = [])
+    public function checkbox($Text, $Inline, $Attribs = array())
     {
         return new Checkbox($Text, $Inline, $Attribs, $this->FormType, $this->LabelWidth);
     }
@@ -129,7 +137,7 @@ class Form extends FormElement
      *
      * @return Form
      */
-    public function hidden($Inputs = [])
+    public function hidden($Inputs = array())
     {
         foreach ($Inputs as $i) {
             if (is_array($i)) {

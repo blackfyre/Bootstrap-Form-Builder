@@ -1,9 +1,13 @@
 <?php
 namespace JasonKaz\FormBuild;
 
+/**
+ * Class FormElement
+ * @package JasonKaz\FormBuild
+ */
 class FormElement extends FormUtils
 {
-    protected $Code = "", $Attribs = [];
+    protected $Code = "", $Attribs = array();
 
     /**
      * @return string

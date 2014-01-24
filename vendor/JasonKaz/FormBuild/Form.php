@@ -86,12 +86,15 @@ class Form extends FormElement
             }
 
             if (gettype($Args[$i]) === "string") {
+
                 $this->Code .= '<p class="help-block">' . $Args[$i] . '</p>';
-            } else {
+
+            } elseif (is_object($Args[$i]) && method_exists($Args[$i], 'render')) {
                 $this->Code .= $Args[$i]->render();
+
             }
 
-            if ($this->FormType == FormType::Horizontal && $i === $ArgCount - 1 && get_class($Args[$i]) !== "JasonKaz\\FormBuild\\Checkbox") {
+            if ($this->FormType == FormType::Horizontal && $i === $ArgCount - 1 && get_class($Args[1]) !== "JasonKaz\\FormBuild\\Checkbox") {
                 $this->Code .= '</div>';
             }
         }
